@@ -1,4 +1,4 @@
-Vision y Objetivos
+Propósito del Sistema
 =================================
 Vision
 --------------
