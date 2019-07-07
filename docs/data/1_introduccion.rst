@@ -13,7 +13,7 @@ Para representar el sistema de manera global, se utilizará el modelo de vistas 
 Es un modelo que permite diagramar arquitecturas de software basada en abstracciones que reflejan como los desarrolladores piensan y construyen el software.
 
 .. image:: images/c4.png
-    :scale: 20%
+    :scale:: 20%
     :align: center
 
 
