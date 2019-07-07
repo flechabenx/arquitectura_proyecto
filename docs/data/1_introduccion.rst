@@ -14,7 +14,7 @@ Es un modelo que permite diagramar arquitecturas de software basada en abstracci
 
 .. image:: images/c4.png
     :scale: 20%
-    :align: left
+    :align: center
     
 2) Archimate
 ~~~~~~~~~~~~~~~~~~~~
@@ -22,7 +22,7 @@ Es un lenguaje de modelado que permite describir, analizar y visualizar arquitec
 
 .. image:: images/archimate.jpg
     :scale: 60%
-    :align: left
+    :align: center
     
 3) UML
 ~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +30,7 @@ Es un lenguaje de modelado de sistemas de software que provee una manera estanda
 
 .. image:: images/uml.png
     :scale: 60%
-    :align: left
+    :align: center
 
 Stakeholders
 -------------------------------
