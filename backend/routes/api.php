@@ -17,4 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('medicion_contaminacion', 'medicion_contaminacionController');
+Route::get('medicion/mp2', 'medicionController@getMp2');
+Route::get('medicion/gas', 'medicionController@getGases');
+
+Route::resource('medicion', 'medicionController');
