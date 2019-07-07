@@ -17,35 +17,98 @@ class medicionController extends Controller
     // por estacion meteorologica o por ciudad, ahi hay que ver
 
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
-    public function index(Request $request)
-    {
-        $prueba = $request->test;
-        $mediciones = medicion_contaminacion::limit(30)->offset(30)->select('fecha')
-            ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS valor "))
-            ->where('estacion_parametro_id', 358)->get();
-        return $mediciones;
-    }
     /**
-     * el metodo recibiara 2 parametros en el request, el primero una fecha
-     * y el segundo un numero (1=dia, 2=semana, 3=mes)
+     * el metodo recibiara 3 parametros en el request, el primero una fecha yyyy-mm-dd
+     * el segundo un numero (1=dia, 2=semana, 3=mes) para ver de cuantos dias se quiere la informacion
+     * el tercero es la estacion (1 = padre las casas, 2 = las encinas)
      */
     public function getMediciones(Request $request)
     {
         $fecha = $request->fecha;
 
+        $dia = date("d", strtotime($fecha));
+        $semana = date("W", strtotime($fecha));
+        $mes = date("m", strtotime($fecha));
+        $año = date("Y", strtotime($fecha));
+
         $limite = $request->limite;
 
-        $mediciones = medicion_contaminacion::limit(35)->offset(30)->select('fecha')
-            ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS valor "))
-            ->where('estacion_parametro_id', 358)->get();
+        if (($request->limite == 1)) {
+            if ($request->estacion == 1) {
+                $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereYear('fecha', $año)
+                    ->whereMonth('fecha', $mes)->whereDay('fecha', $dia)->select('fecha', 'valor AS temperatura')
+                    ->orderBy('fecha', 'DESC')->get();
+                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereYear('fecha', $año)
+                    ->whereMonth('fecha', $mes)->whereDay('fecha', $dia)->select('fecha', 'valor as humedad')
+                    ->orderBy('fecha', 'DESC')->get();
+                $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
+            } else {
+                if ($request->estacion == 2) {
+                    $temperatura = medicion_meteorologico::where('estacion_parametro_id', 388)->whereYear('fecha', $año)
+                        ->whereMonth('fecha', $mes)->whereDay('fecha', $dia)->select('fecha', 'valor AS temperatura')
+                        ->orderBy('fecha', 'DESC')->get();
+                    $humedad = medicion_meteorologico::where('estacion_parametro_id', 387)->whereYear('fecha', $año)
+                        ->whereMonth('fecha', $mes)->whereDay('fecha', $dia)->select('fecha', 'valor AS humedad')
+                        ->orderBy('fecha', 'DESC')->get();
+                    $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
+                } else {
+                    return response()->json([
+                        'error' => 'no se encontro la estacion solicitada'
+                    ]);
+                }
+            }
+        } else if ($request->limite == 2) {
+            if ($request->estacion == 1) {
+                $temperatura = medicion_meteorologico::select(DB::raw("SELECT 7 FROM fecha WHERE date_part( 'week', :fecha ) = :semana", ["fecha" => $fecha, "semana" => $semana]))->where('estacion_parametro_id', 368)
+                    ->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS temperatura')
+                    ->orderBy('fecha', 'DESC')->get();
+                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereYear('fecha', $año)
+                    ->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor as humedad')
+                    ->orderBy('fecha', 'DESC')->get();
+                $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
+            } else {
+                if ($request->estacion == 2) {
+                    $temperatura = medicion_meteorologico::where('estacion_parametro_id', 388)->whereYear('fecha', $año)
+                        ->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS temperatura')
+                        ->orderBy('fecha', 'DESC')->get();
+                    $humedad = medicion_meteorologico::where('estacion_parametro_id', 387)->whereYear('fecha', $año)
+                        ->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS humedad')
+                        ->orderBy('fecha', 'DESC')->get();
+                    $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
+                } else {
+                    return response()->json([
+                        'error' => 'no se encontro la estacion solicitada'
+                    ]);
+                }
+            }
+        } else if ($request->limite == 3) {
+            if ($request->estacion == 1) {
+                $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereYear('fecha', $año)
+                    ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '12:00:00')->orderBy('fecha', 'DESC')
+                    ->select('fecha', 'valor as temperatura')->get();
+                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereYear('fecha', $año)
+                    ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor as humedad')
+                    ->orderBy('fecha', 'DESC')->get();
+                $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
+            } else {
+                if ($request->estacion == 2) {
+                    $temperatura = medicion_meteorologico::where('estacion_parametro_id', 388)->whereYear('fecha', $año)
+                        ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS temperatura')
+                        ->orderBy('fecha', 'DESC')->get();
+                    $humedad = medicion_meteorologico::first()->where('estacion_parametro_id', 387)->whereYear('fecha', $año)
+                        ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS humedad')
+                        ->orderBy('fecha', 'DESC')->get();
+                    $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
+                } else {
+                    return response()->json([
+                        'error' => 'no se encontro la estacion solicitada'
+                    ]);
+                }
+            }
+        }
 
-        //$mediciones = medicion_contaminacion::
+        return $resultado;
     }
 
     /** 
@@ -67,6 +130,41 @@ class medicionController extends Controller
                 $resultado = medicion_contaminacion::where('estacion_parametro_id', 376)->select('fecha')
                     ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS mp2 "))
                     ->orderBy('fecha', 'DESC')->take(1)->get();
+            } else {
+                return response()->json([
+                    'error' => 'no se encontro la estacion solicitada'
+                ]);
+            }
+        }
+
+        return $resultado;
+    }
+
+    /** 
+     * es necesario pasar como parametro la estacion de la cual se quiere a la temperatura y humedad
+     * (1 = Padre las casas II, 2 = Las encinas)
+     *"367"	"Padre Las Casas II"	"Humedad Relativa del Aire"
+     *"368"	"Padre Las Casas II"	"Temperatura Ambiente"
+     *"387"	"Las Encinas"	"Humedad Relativa del Aire"
+     *"388"	"Las Encinas"	"Temperatura Ambiente"
+     */
+
+    public function getLastData(Request $request)
+    {
+
+        if ($request->estacion == 1) {
+            $temperatura = medicion_meteorologico::first()->where('estacion_parametro_id', 368)->whereNotNull('valor')->select('fecha', 'valor AS temperatura')
+                ->orderBy('fecha', 'DESC')->take(1)->get();
+            $humedad = medicion_meteorologico::first()->where('estacion_parametro_id', 367)->whereNotNull('valor')->select('fecha', 'valor as humedad')
+                ->orderBy('fecha', 'DESC')->take(1)->get();
+            $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
+        } else {
+            if ($request->estacion == 2) {
+                $temperatura = medicion_meteorologico::first()->where('estacion_parametro_id', 388)->whereNotNull('valor')->select('fecha', 'valor AS temperatura')
+                    ->orderBy('fecha', 'DESC')->take(1)->get();
+                $humedad = medicion_meteorologico::first()->where('estacion_parametro_id', 387)->whereNotNull('valor')->select('fecha', 'valor AS humedad')
+                    ->orderBy('fecha', 'DESC')->take(1)->get();
+                $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
             } else {
                 return response()->json([
                     'error' => 'no se encontro la estacion solicitada'
@@ -124,7 +222,10 @@ class medicionController extends Controller
                 ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS NO2 "))
                 ->orderBy('fecha')->take(1)->get();
 
-            $resultado = $NO2->toBase()->merge($NOX)->merge($NO)->merge($CO);
+            $array = array_merge($NO2->toArray(), $NOX->toArray());
+            $array = array_merge($array, $NO->toArray());
+            $array = array_merge($array, $CO->toArray());
+            $resultado = $array;
         }
 
         return $resultado;

@@ -19,5 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('medicion/mp2', 'medicionController@getMp2');
 Route::get('medicion/gas', 'medicionController@getGases');
+Route::get('medicion/lastdata', 'medicionController@getLastData');
+Route::get('medicion/data', 'medicionController@getMediciones');
 
 Route::resource('medicion', 'medicionController');
