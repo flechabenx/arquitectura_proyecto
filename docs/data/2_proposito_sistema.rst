@@ -17,11 +17,23 @@ Historias de Usuario
 Para representar de mejor manera lo que se puede hacer con el sistema se definen algunas historias de usuario que muestran los pasos que puede seguir un usuario cualquiera.
 
 HU Usuario Web 1: El usuario busca conocer la temperatura y humedad de la semana pasada.
-HU Usuario Web 2: El usuario busca conocer si el dia de hoy hay restricción o no.
+HU Usuario Web 2: El usuario desea responder una pregunta hecha por un usuario.
 HU Usuario Web 3: El usuario busca conocer las temperaturas mas altas de un mes en especifico.
 
 HU Usuario Móvil 1: El usuario desea hacer una pregunta sobre el clima en Temuco.
+HU Usuario Móvil 2: El usuario busca conocer si el dia de hoy hay restricción o no.
+HU Usuario Móvil 3: El usuario desea eliminar una pregunta que ya hizo.
 
+HU Usuario Moderador 1: El moderador desea conocer cuantas preguntas se hicieron en un dia.
+HU Usuario Moderador 2: El moderador desea eliminar los comentarios de otro usuario.
+
+Selección de Historias de Usuario
+--------------
+Para la selección de las historias de usuarios mas apropiadas se consideraran 4 aspectos: 
+**Prioridad:** Indica que tan importante es la historia para el sistema. Va del 1 al 5 (1 = Alta Prioridad, 5 = Baja Prioridad)
+**Riesgo:** Indica posibles riesgos que pueden ocurrir a futuro con la historia. Va del 1 al 5 (1 = Bajo Riesgo, 5 = Alto Riesgo)
+**Tiempo:** Indica que tanto tiempo se le debe dedicar a implementar la historia. Va del 1 al 5 (1 = Baja cantidad de Tiempo, 5 = Alta cantidad de Tiempo)
+**Dificultad:** Indica la dificultad de implementación de la historia. Va del 1 al 5 (1 = Baja Dificultad, 5 = Alta Dificultad)
 
 Historia de Usuario 1:
 ~~~~~~~~~~~~~
