@@ -32,10 +32,19 @@ Es un lenguaje de modelado de sistemas de software que provee una manera estanda
     :scale: 20%
     :align: center
 
+Stakeholders
+-------------------------------
+Se han identificado 2 stakeholders que interactuan con el sistema de manera visual. Ambos usuarios ingresarán al sitio web de manera anonima permitiendo a estos visualizar los datos (temperatura y humedad) de manera ordenada, hacer preguntas y responder las de otros.
 
-**Usuario Web**: Consiste en el usuario que ingresa mediante un navegador al sitio web.
++---------------------------+-----------------------------------------------------------------------------+
+| **Stakeholder**           | **Descripción**                                                             |
++---------------------------+-----------------------------------------------------------------------------+
+| Usuario Web               | - Usuario que ingresa al sitio web desde un computador.                     |
+|                           | - Puede visualizar datos, hacer y responder preguntas.                      |
++---------------------------+-----------------------------------------------------------------------------+
+| Usuario Móvil             | - Usuario que ingresa al sitio web mediante un telefono móvil.              |
+|                           | - Puede visualizar datos, hacer y responder preguntas.                      |
++---------------------------+-----------------------------------------------------------------------------+
 
-**Usuario Móvil**: Consiste en el usuario que ingresa mediante un telefono movil al sitio web.
 
-Ambos usuarios ingresarán al sitio web de manera anonima permitiendo a estos visualizar los datos y hacer preguntas.
 
