@@ -12,13 +12,10 @@ use DB;
 class medicionController extends Controller
 {
 
-    //TODO metodo que devuelva las mediciones de un mes, de un dia y de una semana 
-    //mediciones: temperatura, humedad, pm10, pm25
-    // por estacion meteorologica o por ciudad, ahi hay que ver
-
-
+    
 
     /**
+     * metodo que devuelve las mediciones de temperatura y humedad
      * el metodo recibiara 3 parametros en el request, el primero una fecha yyyy-mm-dd
      * el segundo un numero (1=dia, 2=semana, 3=mes) para ver de cuantos dias se quiere la informacion
      * el tercero es la estacion (1 = padre las casas, 2 = las encinas)
@@ -31,6 +28,9 @@ class medicionController extends Controller
         $semana = date("W", strtotime($fecha));
         $mes = date("m", strtotime($fecha));
         $año = date("Y", strtotime($fecha));
+
+        $from = date("Y-m-d", strtotime("{$año}-W{$semana}-1")); //Returns the date of monday in week
+        $to = date("Y-m-d", strtotime("{$año}-W{$semana}-7"));   //Returns the date of sunday in week
 
         $limite = $request->limite;
 
@@ -60,20 +60,16 @@ class medicionController extends Controller
             }
         } else if ($request->limite == 2) {
             if ($request->estacion == 1) {
-                $temperatura = medicion_meteorologico::select(DB::raw("SELECT 7 FROM fecha WHERE date_part( 'week', :fecha ) = :semana", ["fecha" => $fecha, "semana" => $semana]))->where('estacion_parametro_id', 368)
-                    ->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS temperatura')
-                    ->orderBy('fecha', 'DESC')->get();
-                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereYear('fecha', $año)
-                    ->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor as humedad')
+                $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereBetween('fecha',[$from,$to])
+                    ->select('fecha', 'valor AS temperatura')->orderBy('fecha', 'DESC')->get();
+                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereBetween('fecha',[$from,$to])->select('fecha', 'valor as humedad')
                     ->orderBy('fecha', 'DESC')->get();
                 $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
             } else {
                 if ($request->estacion == 2) {
-                    $temperatura = medicion_meteorologico::where('estacion_parametro_id', 388)->whereYear('fecha', $año)
-                        ->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS temperatura')
+                    $temperatura = medicion_meteorologico::where('estacion_parametro_id', 388)->whereYear('fecha', $año)->select('fecha', 'valor AS temperatura')
                         ->orderBy('fecha', 'DESC')->get();
-                    $humedad = medicion_meteorologico::where('estacion_parametro_id', 387)->whereYear('fecha', $año)
-                        ->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS humedad')
+                    $humedad = medicion_meteorologico::where('estacion_parametro_id', 387)->whereYear('fecha', $año)->select('fecha', 'valor AS humedad')
                         ->orderBy('fecha', 'DESC')->get();
                     $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
                 } else {
@@ -85,19 +81,19 @@ class medicionController extends Controller
         } else if ($request->limite == 3) {
             if ($request->estacion == 1) {
                 $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereYear('fecha', $año)
-                    ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '12:00:00')->orderBy('fecha', 'DESC')
+                    ->whereMonth('fecha', $mes)->orderBy('fecha', 'DESC')
                     ->select('fecha', 'valor as temperatura')->get();
                 $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereYear('fecha', $año)
-                    ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor as humedad')
+                    ->whereMonth('fecha', $mes)->select('fecha', 'valor as humedad')
                     ->orderBy('fecha', 'DESC')->get();
                 $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
             } else {
                 if ($request->estacion == 2) {
                     $temperatura = medicion_meteorologico::where('estacion_parametro_id', 388)->whereYear('fecha', $año)
-                        ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS temperatura')
+                        ->whereMonth('fecha', $mes)->select('fecha', 'valor AS temperatura')
                         ->orderBy('fecha', 'DESC')->get();
                     $humedad = medicion_meteorologico::first()->where('estacion_parametro_id', 387)->whereYear('fecha', $año)
-                        ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '12:00:00')->select('fecha', 'valor AS humedad')
+                        ->whereMonth('fecha', $mes)->select('fecha', 'valor AS humedad')
                         ->orderBy('fecha', 'DESC')->get();
                     $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
                 } else {
@@ -112,6 +108,7 @@ class medicionController extends Controller
     }
 
     /** 
+     * funcion que devuelve las ultimas mediciones de mp2,5 disponible
      * es necesario pasar como parametro la estacion de la cual se quiere acceder el mp2,5
      * (1 = Padre las casas II, 2 = Las encinas)
      * estacion_parametro_id Material Particulado PM 2,5 = 358 padre las casas, 376 Las encinas
@@ -141,6 +138,7 @@ class medicionController extends Controller
     }
 
     /** 
+     * funcion que devuelve la ultima informacion disponible de humedad y temperatura ambiente
      * es necesario pasar como parametro la estacion de la cual se quiere a la temperatura y humedad
      * (1 = Padre las casas II, 2 = Las encinas)
      *"367"	"Padre Las Casas II"	"Humedad Relativa del Aire"
@@ -176,6 +174,7 @@ class medicionController extends Controller
     }
 
     /** 
+     * funcion que devuelve los ultimos registros de gases disponibles
      * es necesario pasar como parametro la estacion de la cual se quiere recuperar los gases
      * (1 = Padre las casas II, 2 = Las encinas)
      * codigos de las mediciones:
