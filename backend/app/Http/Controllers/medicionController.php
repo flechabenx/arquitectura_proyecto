@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\medicion_contaminacion;
 use App\medicion_meteorologico;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Response;
 
 use DB;
@@ -12,16 +13,29 @@ use DB;
 class medicionController extends Controller
 {
 
-    
+
 
     /**
      * metodo que devuelve las mediciones de temperatura y humedad
      * el metodo recibiara 3 parametros en el request, el primero una fecha yyyy-mm-dd
-     * el segundo un numero (1=dia, 2=semana, 3=mes) para ver de cuantos dias se quiere la informacion
-     * el tercero es la estacion (1 = padre las casas, 2 = las encinas)
+     * el segundo un numero(limite) (1=dia, 2=semana, 3=mes) para ver de cuantos dias se quiere la informacion
+     * el tercero es la estacion(estacion) (1 = padre las casas, 2 = las encinas)
      */
     public function getMediciones(Request $request)
     {
+
+        $validator = Validator::make($request->all(), [
+            'fecha' => 'required',
+            'limite' => 'required|max:3|min:1',
+            'estacion' => 'required|max:2|min:1'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'parametros enviados erroneos'
+            ]);
+        }
+
         $fecha = $request->fecha;
 
         $dia = date("d", strtotime($fecha));
@@ -60,9 +74,9 @@ class medicionController extends Controller
             }
         } else if ($request->limite == 2) {
             if ($request->estacion == 1) {
-                $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereBetween('fecha',[$from,$to])
+                $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereBetween ('fecha ',[$from,$to])
                     ->select('fecha', 'valor AS temperatura')->orderBy('fecha', 'DESC')->get();
-                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereBetween('fecha',[$from,$to])->select('fecha', 'valor as humedad')
+                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereBetween ('fecha ',[$from,$to])->select('fecha', 'valor as humedad')
                     ->orderBy('fecha', 'DESC')->get();
                 $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
             } else {
@@ -118,6 +132,16 @@ class medicionController extends Controller
     public function getMp2(Request $request)
     {
 
+        $validator = Validator::make($request->all(), [
+            'estacion' => 'required|max:2|min:1'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'parametros enviados erroneos'
+            ]);
+        }
+
         if ($request->estacion == 1) {
             $resultado = medicion_contaminacion::where('estacion_parametro_id', 358)->select('fecha')
                 ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS mp2 "))
@@ -150,6 +174,15 @@ class medicionController extends Controller
     public function getLastData(Request $request)
     {
 
+        $validator = Validator::make($request->all(), [
+            'estacion' => 'required|max:2|min:1'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'parametros enviados erroneos'
+            ]);
+        }
         if ($request->estacion == 1) {
             $temperatura = medicion_meteorologico::first()->where('estacion_parametro_id', 368)->whereNotNull('valor')->select('fecha', 'valor AS temperatura')
                 ->orderBy('fecha', 'DESC')->take(1)->get();
@@ -189,6 +222,16 @@ class medicionController extends Controller
      */
     public function getGases(Request $request)
     {
+
+        $validator = Validator::make($request->all(), [
+            'estacion' => 'required|max:2|min:1'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'parametros enviados erroneos'
+            ]);
+        }
         if ($request->estacion == 1) {
             $NO2 = medicion_contaminacion::where('estacion_parametro_id', 360)->select('fecha')
                 ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS NO2 "))
