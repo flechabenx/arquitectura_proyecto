@@ -7,7 +7,7 @@ En este documento se registra todo el procedimiento realizado para crear un sist
 Arquitecturas a Utilizar
 -------------------------------
 1) C4
-
+~~~~~~~~~~~~~~~~~~~~
 **Usuario Web**: Consiste en el usuario que ingresa mediante un navegador al sitio web.
 
 **Usuario Móvil**: Consiste en el usuario que ingresa mediante un telefono movil al sitio web.
