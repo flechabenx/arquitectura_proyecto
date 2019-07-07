@@ -16,9 +16,9 @@ Historias de Usuario
 --------------
 Para representar de mejor manera lo que se puede hacer con el sistema se definen algunas historias de usuario que muestran los pasos que puede seguir un usuario cualquiera.
 
-HU Usuario Web 1: El usuario busca conocer la temperatura y humedad de la semana pasada.
-HU Usuario Web 2: El usuario desea responder una pregunta hecha por un usuario.
-HU Usuario Web 3: El usuario busca conocer las temperaturas mas altas de un mes en especifico.
+1. HU Usuario Web 1: El usuario busca conocer la temperatura y humedad de la semana pasada.
+2. HU Usuario Web 2: El usuario desea responder una pregunta hecha por un usuario.
+3. HU Usuario Web 3: El usuario busca conocer las temperaturas mas altas de un mes en especifico.
 
 HU Usuario Móvil 1: El usuario desea hacer una pregunta sobre el clima en Temuco.
 HU Usuario Móvil 2: El usuario busca conocer si el dia de hoy hay restricción o no.
