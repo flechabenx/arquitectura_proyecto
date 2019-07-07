@@ -23,6 +23,14 @@ Es un lenguaje de modelado que permite describir, analizar y visualizar arquitec
 .. image:: images/archimate.jpg
     :scale: 20%
     :align: center
+    
+3) UML
+~~~~~~~~~~~~~~~~~~~~
+Es un lenguaje de modelado de sistemas de software que provee una manera estandar de representar y visualizar el diseño de un sistema.
+
+.. image:: images/uml.png
+    :scale: 20%
+    :align: center
 
 
 **Usuario Web**: Consiste en el usuario que ingresa mediante un navegador al sitio web.
