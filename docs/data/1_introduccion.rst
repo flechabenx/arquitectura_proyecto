@@ -15,6 +15,14 @@ Es un modelo que permite diagramar arquitecturas de software basada en abstracci
 .. image:: images/c4.png
     :scale: 20%
     :align: center
+    
+2) Archimate
+~~~~~~~~~~~~~~~~~~~~
+Es un lenguaje de modelado que permite describir, analizar y visualizar arquitecturas de software dentro de un dominio de negocio.
+
+.. image:: images/archimate.jpg
+    :scale: 20%
+    :align: center
 
 
 **Usuario Web**: Consiste en el usuario que ingresa mediante un navegador al sitio web.
