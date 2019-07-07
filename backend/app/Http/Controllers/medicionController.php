@@ -109,7 +109,7 @@ class medicionController extends Controller
             $array = array_merge($NO2->toArray(), $NOX->toArray());
             $array = array_merge($array, $NO->toArray());
             $array = array_merge($array, $CO->toArray());
-            $resultado = json_encode($array);
+            $resultado = $array;
         } else {
             $NO2 = medicion_contaminacion::where('estacion_parametro_id', 379)->select('fecha')
                 ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS NO2 "))
