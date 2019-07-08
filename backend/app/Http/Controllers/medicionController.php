@@ -48,7 +48,7 @@ class medicionController extends Controller
 
         $limite = $request->limite;
 
-        if (($request->limite == 1)) {
+        if (($limite == 1)) {
             if ($request->estacion == 1) {
                 $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereYear('fecha', $año)
                     ->whereMonth('fecha', $mes)->whereDay('fecha', $dia)->select('fecha', 'valor AS temperatura')
@@ -72,12 +72,12 @@ class medicionController extends Controller
                     ]);
                 }
             }
-        } else if ($request->limite == 2) {
+        } else if ($limite == 2) {
             if ($request->estacion == 1) {
-                $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereBetween ('fecha ',[$from,$to])
-                    ->select('fecha', 'valor AS temperatura')->orderBy('fecha', 'DESC')->get();
-                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereBetween ('fecha ',[$from,$to])->select('fecha', 'valor as humedad')
-                    ->orderBy('fecha', 'DESC')->get();
+                $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereBetween('fecha', [$from, $to])
+                ->select('fecha', 'valor AS temperatura')->orderBy('fecha', 'DESC')->get();
+                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereBetween('fecha',[$from,$to])
+                ->select('fecha', 'valor as humedad')->orderBy('fecha', 'DESC')->get();
                 $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
             } else {
                 if ($request->estacion == 2) {
@@ -92,7 +92,7 @@ class medicionController extends Controller
                     ]);
                 }
             }
-        } else if ($request->limite == 3) {
+        } else if ($limite == 3) {
             if ($request->estacion == 1) {
                 $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereYear('fecha', $año)
                     ->whereMonth('fecha', $mes)->orderBy('fecha', 'DESC')
