@@ -1,4 +1,4 @@
-Comportamiento Dinamico
+Comportamiento Dinámico
 ==============
 
 
