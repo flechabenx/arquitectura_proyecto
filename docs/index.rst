@@ -8,3 +8,4 @@ Documentación - Proyecto de Arquitectura
     data/2_proposito_sistema.rst
     data/3_estructura.rst
     data/4_comportamiento_dinamico.rst
+    data/5_conclusiones.rst
