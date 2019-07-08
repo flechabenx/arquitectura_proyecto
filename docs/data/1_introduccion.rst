@@ -36,19 +36,17 @@ Stakeholders
 -------------------------------
 Se han identificado 2 stakeholders que interactuan con el sistema de manera visual. Ambos usuarios ingresarán al sitio web de manera anonima permitiendo a estos visualizar los datos (temperatura y humedad) de manera ordenada, hacer preguntas y responder las de otros.
 
-+---------------------------+-----------------------------------------------------------------------------+
-| **Stakeholder**           | **Descripción**                                                             |
-+---------------------------+-----------------------------------------------------------------------------+
-| Usuario Web               | - Usuario que ingresa al sitio web desde un computador.                     |
-|                           | - Puede visualizar datos, hacer y responder preguntas.                      |
-+---------------------------+-----------------------------------------------------------------------------+
-| Usuario Móvil             | - Usuario que ingresa al sitio web mediante un telefono móvil.              |
-|                           | - Puede visualizar datos, hacer y responder preguntas.                      |
-+---------------------------+-----------------------------------------------------------------------------+
-| Usuario Moderador         | - Usuario que ingresa al sitio web con privilegios. Puede ser desde         |
-|                           | Computador o telefono móvil.                                                |
-|                           | - Puede hacer lo mismo que los otros usuarios pero tambien eliminar mensajes|
-|                           | banear usuarios, banear palabras y añadir moderadores.                      |
-+---------------------------+-----------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------------------------------+
+| **Stakeholder**           | **Descripción**                                                                                  |
++---------------------------+--------------------------------------------------------------------------------------------------+
+| Usuario Web               | - Usuario que ingresa al sitio web desde un computador.                                          |
+|                           | - Puede visualizar datos, hacer y responder preguntas.                                           |
++---------------------------+--------------------------------------------------------------------------------------------------+
+| Usuario Móvil             | - Usuario que ingresa al sitio web mediante un telefono móvil.                                   |
+|                           | - Puede visualizar datos, hacer y responder preguntas.                                           |
++---------------------------+--------------------------------------------------------------------------------------------------+
+| Usuario Moderador         | - Usuario que ingresa al sitio web con privilegios. Puede ser desde Computador o telefono móvil. |
+|                           | - Puede eliminar mensajes banear usuarios, banear palabras y añadir moderadores.                 |                                                                  
++---------------------------+--------------------------------------------------------------------------------------------------|
 
 
