@@ -4,7 +4,7 @@ Estructura
 Visión general
 --------------
 
-.. image:: images/vision general.jpg
+.. image:: images/vision_general.jpg
     :scale: 60%
     :align: center
 
