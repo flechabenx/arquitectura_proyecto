@@ -86,15 +86,70 @@ Historias de Usuarios Moderadores
 En este punto, se usa solamente la historia de usuario **HU Usuario Moderador 2**. A pesar de que tenga una prioridad media, los demas aspectos permiten que sea facil de implementar. Por otro lado, la historia **HU Usuario Moderador 1** implica crear nuevos metodos, que si bien no son tan complejos, seria una caracteristica adicional no prioritaria que atrasaria el proyecto.
 
 
-
-Historia de Usuario 1:
+Representación de Historias Seleccionadas
 ~~~~~~~~~~~~~
-+---------------------------+-----------------------------------------------------------------------------+
-| **Numero:** 1             | **Usuario:** Usuario Web                                                    |
-+---------------------------+-----------------------------------------------------------------------------+
-| **Nombre Historia:** 
-+---------------------------+-----------------------------------------------------------------------------+
-| Usuario Móvil             | - Usuario que ingresa al sitio web mediante un telefono móvil.              |
-|                           | - Puede visualizar datos, hacer y responder preguntas.                      |
-+---------------------------+-----------------------------------------------------------------------------+
+Para visualizar las 5 historias seleccionadas de mejor manera, se muestran en forma de tabla.
 
+1. **HU Usuario Web 1**
+
++---------------------------+---------------------------------------------------------------------------+
+| **Numero:** 1             | **Usuario:** Usuario Web                                                  |
++---------------------------+---------------------------------------------------------------------------+
+| **Nombre Historia:** Revisar Temperatura y Humedad                                                    |
++--------------------------+-----------------------+-----------------------+----------------------------+
+| **Prioridad:** Muy Alta  | **Riesgo:** Bajo      | **Tiempo:** Bajo      | **Dificultad:** Media      |
++--------------------------+-----------------------+-----------------------+----------------------------+
+| **Descripción:** El usuario busca conocer la temperatura y humedad de la semana pasada.               |
++-------------------------------------------------------------------------------------------------------+
+
+
+2. **HU Usuario Web 2**
+
++---------------------------+---------------------------------------------------------------------------+
+| **Numero:** 2             | **Usuario:** Usuario Web                                                  |
++---------------------------+---------------------------------------------------------------------------+
+| **Nombre Historia:** Responder Pregunta                                                               |
++--------------------------+-----------------------+-----------------------+----------------------------+
+| **Prioridad:** Muy Alta  | **Riesgo:** Muy Bajo  | **Tiempo:** Bajo      | **Dificultad:** Baja       |
++--------------------------+-----------------------+-----------------------+----------------------------+
+| **Descripción:** El usuario desea responder una pregunta hecha por un usuario.                        |
++-------------------------------------------------------------------------------------------------------+
+
+
+3. **HU Usuario Móvil 1**
+
++---------------------------+---------------------------------------------------------------------------+
+| **Numero:** 3             | **Usuario:** Usuario Móvil                                                |
++---------------------------+---------------------------------------------------------------------------+
+| **Nombre Historia:** Hacer Pregunta                                                                   |
++--------------------------+-----------------------+-----------------------+----------------------------+
+| **Prioridad:** Muy Alta  | **Riesgo:** Muy Bajo  | **Tiempo:** Bajo      | **Dificultad:** Baja       |
++--------------------------+-----------------------+-----------------------+----------------------------+
+| **Descripción:** El usuario desea hacer una pregunta sobre el clima en Temuco.                        |
++-------------------------------------------------------------------------------------------------------+
+
+
+4. **HU Usuario Móvil 2**
+
++---------------------------+---------------------------------------------------------------------------+
+| **Numero:** 4             | **Usuario:** Usuario Móvil                                                |
++---------------------------+---------------------------------------------------------------------------+
+| **Nombre Historia:** Revisar Restricción                                                              |
++--------------------------+-----------------------+------------------------+---------------------------+
+| **Prioridad:** Baja      | **Riesgo:** Muy Bajo  | **Tiempo:** Muy Bajo   | **Dificultad:** Muy Baja  |
++--------------------------+-----------------------+------------------------+---------------------------+
+| **Descripción:** El usuario busca conocer si el dia de hoy hay restricción o no.                      |
++-------------------------------------------------------------------------------------------------------+
+
+
+5. **HU Usuario Moderador 2**
+
++---------------------------+---------------------------------------------------------------------------+
+| **Numero:** 5             | **Usuario:** Usuario Moderador                                            |
++---------------------------+---------------------------------------------------------------------------+
+| **Nombre Historia:** Eliminar Comentarios                                                             |
++--------------------------+-----------------------+------------------------+---------------------------+
+| **Prioridad:** Media     | **Riesgo:** Muy Bajo  | **Tiempo:** Muy Bajo   | **Dificultad:** Muy Baja  |
++--------------------------+-----------------------+------------------------+---------------------------+
+| **Descripción:** El moderador desea eliminar los comentarios de otro usuario.                         |
++-------------------------------------------------------------------------------------------------------+
