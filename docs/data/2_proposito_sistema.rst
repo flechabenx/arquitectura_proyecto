@@ -52,7 +52,9 @@ Luego, se evalua cada aspecto de las historias de usuarios. Mientras menor es el
 
 En este punto, se usaran las historias de usuario **HU Usuario Web 1** y **HU Usuario Web 2** debido a su bajo valor total y su alta prioridad. En cambio, la historia **HU Usuario Web 3** se descarta porque no es algo que tenga mucho impacto en el sistema, ademas de la complejidad de agregar nuevos filtros y metodos que permitan conocer las temperaturas mas altas.
 
+
 2. **HISTORIAS DE USUARIOS MÓVILES**
+
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
 | **Historia de Usuario**            | **Prioridad**  | **Riesgo**  | **Tiempo**  | **Dificultad**  | **Total** |
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
@@ -62,9 +64,12 @@ En este punto, se usaran las historias de usuario **HU Usuario Web 1** y **HU Us
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
 | HU Usuario Móvil 3                 | 3              | 1           | 4           | 5               | 13        |
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
+
 En este punto, se usaran las historias de usuario **HU Usuario Móvil 1** debido a su alta prioridad y **HU Usuario Móvil 2** debido a su facilidad de implementación. La historia **HU Usuario Móvil 3** se descarta puesto que es una tarea compleja que implicaria utilizar APIs de algun otro sitio meteorologico. Ademas, no es un requisito de alta prioridad.
 
+
 3. **HISTORIAS DE USUARIOS MODERADORES**
+
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
 | **Historia de Usuario**            | **Prioridad**  | **Riesgo**  | **Tiempo**  | **Dificultad**  | **Total** |
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
@@ -72,6 +77,7 @@ En este punto, se usaran las historias de usuario **HU Usuario Móvil 1** debido
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
 | HU Usuario Moderador 2             | 3              | 1           | 1           | 1               | 6         |
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
+
 En este punto, se usa solamente la historia de usuario **HU Usuario Moderador 2**. A pesar de que tenga una prioridad media, los demas aspectos permiten que sea facil de implementar. Por otro lado, la historia **HU Usuario Moderador 1** implica crear nuevos metodos, que si bien no son tan complejos, seria una caracteristica adicional no prioritaria que atrasaria el proyecto.
 
 Historia de Usuario 1:
