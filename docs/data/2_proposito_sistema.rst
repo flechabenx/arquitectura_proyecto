@@ -86,7 +86,7 @@ Historias de Usuarios Moderadores
 En este punto, se usa solamente la historia de usuario **HU Usuario Moderador 2**. A pesar de que tenga una prioridad media, los demas aspectos permiten que sea facil de implementar. Por otro lado, la historia **HU Usuario Moderador 1** implica crear nuevos metodos, que si bien no son tan complejos, seria una caracteristica adicional no prioritaria que atrasaria el proyecto.
 
 
-Representación de Historias Seleccionadas:
+Representación de Historias Seleccionadas
 ~~~~~~~~~~~~~
 Para visualizar las 5 historias seleccionadas de mejor manera, se muestran en forma de tabla.
 
