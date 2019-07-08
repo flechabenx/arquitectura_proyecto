@@ -48,6 +48,7 @@ Luego, se evalua cada aspecto de las historias de usuarios. Mientras menor es el
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
 | HU Usuario Web 3                   | 3              | 2           | 3           | 4               | 12        |
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
+
 En este punto, se usaran las historias de usuario **HU Usuario Web 1** y **HU Usuario Web 2** debido a su bajo valor total y su alta prioridad. En cambio, la historia **HU Usuario Web 3** se descarta porque no es algo que tenga mucho impacto en el sistema, ademas de la complejidad de agregar nuevos filtros y metodos que permitan conocer las temperaturas mas altas.
 
 2. **HISTORIAS DE USUARIOS MÓVILES**
