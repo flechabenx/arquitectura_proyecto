@@ -132,6 +132,8 @@ class medicionController extends Controller
     public function getMp2(Request $request)
     {
 
+        
+
         $validator = Validator::make($request->all(), [
             'estacion' => 'required|integer|between:1,2'
         ]);
