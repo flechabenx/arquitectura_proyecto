@@ -47,6 +47,6 @@ Se han identificado 2 stakeholders que interactuan con el sistema de manera visu
 +---------------------------+--------------------------------------------------------------------------------------------------+
 | Usuario Moderador         | - Usuario que ingresa al sitio web con privilegios. Puede ser desde Computador o telefono móvil. |
 |                           | - Puede eliminar mensajes banear usuarios, banear palabras y añadir moderadores.                 |                                                                  
-+---------------------------+--------------------------------------------------------------------------------------------------|
++---------------------------+--------------------------------------------------------------------------------------------------+
 
 
