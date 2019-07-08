@@ -39,6 +39,7 @@ Para la selección de las historias de usuarios mas apropiadas se considerarán 
 Luego, se evalua cada aspecto de las historias de usuarios. Mientras menor es el valor total (suma del valor de cada aspecto), mas viable es la historia de usuario, y mas probable implementarla.
 
 1. **HISTORIAS DE USUARIOS WEB**
+
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
 | **Historia de Usuario**            | **Prioridad**  | **Riesgo**  | **Tiempo**  | **Dificultad**  | **Total** |
 +------------------------------------+----------------+-------------+-------------+-----------------+-----------+
