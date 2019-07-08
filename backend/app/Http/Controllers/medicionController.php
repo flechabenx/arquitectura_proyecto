@@ -257,13 +257,13 @@ class medicionController extends Controller
                 ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS NO2 "))
                 ->orderBy('fecha')->take(1)->get();
             $NOX = medicion_contaminacion::where('estacion_parametro_id', 380)->select('fecha')
-                ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS NO2 "))
+                ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS NOX "))
                 ->orderBy('fecha')->take(1)->get();
             $NO = medicion_contaminacion::where('estacion_parametro_id', 381)->select('fecha')
-                ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS NO2 "))
+                ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS NO "))
                 ->orderBy('fecha')->take(1)->get();
             $CO = medicion_contaminacion::where('estacion_parametro_id', 382)->select('fecha')
-                ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS NO2 "))
+                ->selectRaw(DB::raw("COALESCE(registro_validado, registro_preliminar, registro_sin_validar)  AS CO "))
                 ->orderBy('fecha')->take(1)->get();
 
             $array = array_merge($NO2->toArray(), $NOX->toArray());
