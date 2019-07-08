@@ -26,8 +26,8 @@ class medicionController extends Controller
 
         $validator = Validator::make($request->all(), [
             'fecha' => 'required',
-            'limite' => 'required|max:3|min:1',
-            'estacion' => 'required|max:2|min:1'
+            'limite' => 'required|integer|between:1,3',
+            'estacion' => 'required|integer|between:1,2'
         ]);
 
         if ($validator->fails()) {
@@ -133,7 +133,7 @@ class medicionController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'estacion' => 'required|max:2|min:1'
+            'estacion' => 'required|integer|between:1,2'
         ]);
 
         if ($validator->fails()) {
@@ -175,7 +175,7 @@ class medicionController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'estacion' => 'required|max:2|min:1'
+            'estacion' => 'required|integer|between:1,2'
         ]);
 
         if ($validator->fails()) {
@@ -224,7 +224,7 @@ class medicionController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'estacion' => 'required|max:2|min:1'
+            'estacion' => 'required|integer|between:1,2'
         ]);
 
         if ($validator->fails()) {
