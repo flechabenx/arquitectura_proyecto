@@ -45,6 +45,10 @@ Se han identificado 2 stakeholders que interactuan con el sistema de manera visu
 | Usuario Móvil             | - Usuario que ingresa al sitio web mediante un telefono móvil.              |
 |                           | - Puede visualizar datos, hacer y responder preguntas.                      |
 +---------------------------+-----------------------------------------------------------------------------+
-
+| Usuario Moderador         | - Usuario que ingresa al sitio web con privilegios. Puede ser desde         |
+|                           | Computador o telefono móvil.                                                |
+|                           | - Puede hacer lo mismo que los otros usuarios pero tambien eliminar mensajes|
+|                           | banear usuarios, banear palabras y añadir moderadores.                      |
++---------------------------+-----------------------------------------------------------------------------+
 
 
