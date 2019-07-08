@@ -244,3 +244,44 @@ Comentarios
 +---------------------------+-----------------------------------------------------------------------------+
 | **Problemas**             |                                                                             |
 +---------------------------+-----------------------------------------------------------------------------+
+
+Sección de Interfaces
+---------------------
+En esta sección se describen y especifican los servicios o interfaces que provee el sistema.
+
+Medicion
+~~~~~~~~
++---------------------------+-----------------------------------------------------------------------------+
+| **Interface**             | medicionController                                                          |
++---------------------------+-----------------------------------------------------------------------------+
+| **Descripción**           | Permite acceder a mediciones, tanto de clima como de contaminacion          |
++---------------------------+-----------------------------------------------------------------------------+
+| **Operaciones**           | - **Operación:** getMediciones( limite, fecha, estacion)                    |
+|                           | - **Ruta:** api/medicion/data                                               |
+|                           | - **Metodo:** GET                                                           |
+|                           | - **Descripción:** Muestra las mediciones segun estacion y limite de acuerdo|
+|                           |   a la fecha dada                                                           |
++                           +-----------------------------------------------------------------------------+
+|                           | - **Operación:** getMp2(estacion)                                           |
+|                           | - **Ruta:** api/medicion/mp2                                                |
+|                           | - **Metodo:** GET                                                           |
+|                           | - **Descripción:** obtiene el ultimo registro de mp2,5                      |
++                           +-----------------------------------------------------------------------------+
+|                           | - **Operación:** getLastData(estacion)                                      |
+|                           | - **Ruta:** api/medicion/lastdata                                           |
+|                           | - **Metodo:** GET                                                           |
+|                           | - **Descripción:** obtiene los ultimos datos de humedad y temperatura       |
+|                           |                                                                             |
++                           +-----------------------------------------------------------------------------+
+|                           | - **Operación:** getGases(estacion)                                         |
+|                           | - **Ruta:** api/medicion/gas                                                |
+|                           | - **Metodo:** GET                                                           |
+|                           | - **Descripción:** 0btiene lo ultimos registros de gases segun la estacion  |
++---------------------------+-----------------------------------------------------------------------------+
+| **Protocolo**             | No existen restricciones en el orden de las operaciones                     |
++---------------------------+-----------------------------------------------------------------------------+
+| **Notas**                 | Esta interface es provista por el componente Controladores del backend      |
+|                           |                                                                             |
++---------------------------+-----------------------------------------------------------------------------+
+| **Problemas**             |                                                                             |
++---------------------------+-----------------------------------------------------------------------------+
