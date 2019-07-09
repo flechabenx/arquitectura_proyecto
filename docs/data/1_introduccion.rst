@@ -2,7 +2,7 @@ Introducción
 =================================
 Hoy en dia junto al rapido incremento de la complejidad de los software, es necesario poder representar el sistema completo, usando alguna arquitectura apropiada que nos permita razonar sobre este. En otras palabras, se requiere de una arquitectura capaz de entregarnos una visualizacion clara del software, de esta manera podremos conocer la extension del mismo y a lo que nos estamos enfrentando.
 
-En este documento se registra todo el procedimiento realizado para crear un sistema web que permita visualizar temperatura y humedad en distintos puntos de la ciudad de Temuco - Chile, desde el año 2000 a la fecha. Para estructurar la documentación de manera sencilla y facil de entender, se utilizará la Metodologia Ad-Hoc que consta de 8 fases (Definir stakeholders, Definir vision y objetivos, Crear historias de usuario, Seleccionar historias de usuario, Crear mockups, Diseño, Implementación y Testeo, y Despliegue)
+En este documento se registra todo el procedimiento realizado para crear un sistema web que permita visualizar temperatura y humedad en distintos puntos de la ciudad de Temuco - Chile, desde el año 2004 a la fecha. Para estructurar la documentación de manera sencilla y facil de entender, se utilizará la Metodologia Ad-Hoc que consta de 8 fases (Definir stakeholders, Definir vision y objetivos, Crear historias de usuario, Seleccionar historias de usuario, Crear mockups, Diseño, Implementación y Testeo, y Despliegue)
 
 Representación de la Arquitectura
 -------------------------------
@@ -34,7 +34,7 @@ Es un lenguaje de modelado de sistemas de software que provee una manera estanda
 
 Stakeholders
 -------------------------------
-Se han identificado 2 stakeholders que interactuan con el sistema de manera visual. Ambos usuarios ingresarán al sitio web de manera anonima permitiendo a estos visualizar los datos (temperatura y humedad) de manera ordenada, hacer preguntas y responder las de otros.
+Se han identificado 3 stakeholders que interactuan con el sistema de manera visual. Tanto usuario web como usuario móvil ingresarán al sitio web de manera anonima permitiendo a estos visualizar los datos (temperatura y humedad) de manera ordenada, hacer preguntas y responder las de otros. Por otro lado el usuario moderador tendra que ingresar con su cuenta para poder modearar sobre estas preguntas y comentarios.
 
 +---------------------------+--------------------------------------------------------------------------------------------------+
 | **Stakeholder**           | **Descripción**                                                                                  |
