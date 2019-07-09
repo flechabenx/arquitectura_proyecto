@@ -27,7 +27,7 @@ A continuación se detalla cada caso de uso.
 |                  | 5. Se despliegan los graficos correspondientes.                                                        |
 +------------------+--------------------------------------------------------------------------------------------------------+
 
-2. Desplegar formulario para desplegar preguntar y responder
+2. Desplegar formulario para preguntar y responder
 ~~~~~~~~~~~~
 
 +------------------+--------------------------------------------------------------------------------------------------------+
