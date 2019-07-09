@@ -26,3 +26,38 @@ A continuación se detalla cada caso de uso.
 |                  | 4. El sistema accede a la base de datos para obtener los datos atmosfericos del periodo seleccionado.  |
 |                  | 5. Se despliegan los graficos correspondientes.                                                        |
 +------------------+--------------------------------------------------------------------------------------------------------+
+
+2. Desplegar formulario para desplegar preguntar y responder
+~~~~~~~~~~~~
+
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Caso de Uso**  | Visualizar Datos Atmosfericos                                                                          |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Descripción**  | Muestra temperatura y humedad en forma de graficas                                                     |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Actores**      | Usuario Web, Usuario Móvil                                                                             |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Pasos**        | 1. El Usuario ingresa al sitio web.                                                                    |
+|                  | 2. El Usuario selecciona la fecha que desea visualizar.                                                |
+|                  | 3. El Usuario presiona el botón "Consultar"                                                            |
+|                  | 4. El sistema accede a la base de datos para obtener los datos atmosfericos del periodo seleccionado.  |
+|                  | 5. Se despliegan los graficos correspondientes.                                                        |
++------------------+--------------------------------------------------------------------------------------------------------+
+
+3. Filtrar datos por estación
+~~~~~~~~~~~~
+
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Caso de Uso**  | Filtrar datos por estación                                                                             |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Descripción**  | Permite la seleccion de una de las diferentes estaciones de la ciudad de Temuco                        |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Actores**      | Usuario Web, Usuario Móvil                                                                             |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **PreCondición** | Visualizar Datos Atmosfericos                                                                          |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Pasos**        | 1. El Usuario selecciona la estación a visualizar.                                                     |
+|                  | 2. El Usuario presiona el botón "Consultar"                                                            |
+|                  | 3. El sistema accede a la base de datos para obtener los datos atmosfericos de estación seleccionada.  |
+|                  | 4. Se despliegan los graficos correspondientes.                                                        |
++------------------+--------------------------------------------------------------------------------------------------------+
