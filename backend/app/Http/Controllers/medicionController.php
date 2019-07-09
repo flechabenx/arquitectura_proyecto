@@ -75,16 +75,16 @@ class medicionController extends Controller
         } else if ($limite == 2) {
             if ($request->estacion == 1) {
                 $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereBetween('fecha', [$from, $to])
-                ->whereTime('fecha','=', '15:00:00')->select('fecha', 'valor AS temperatura')->orderBy('fecha', 'DESC')->get();
-                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereBetween('fecha',[$from,$to])
-                ->whereTime('fecha','=', '15:00:00')->select('fecha', 'valor as humedad')->orderBy('fecha', 'DESC')->get();
+                    ->whereTime('fecha', '=', '15:00:00')->select('fecha', 'valor AS temperatura')->orderBy('fecha', 'DESC')->get();
+                $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereBetween('fecha', [$from, $to])
+                    ->whereTime('fecha', '=', '15:00:00')->select('fecha', 'valor as humedad')->orderBy('fecha', 'DESC')->get();
                 $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
             } else {
                 if ($request->estacion == 2) {
                     $temperatura = medicion_meteorologico::where('estacion_parametro_id', 388)->whereYear('fecha', $año)->select('fecha', 'valor AS temperatura')
-                        ->orderBy('fecha', 'DESC')->get();
+                        ->whereTime('fecha', '=', '15:00:00')->orderBy('fecha', 'DESC')->get();
                     $humedad = medicion_meteorologico::where('estacion_parametro_id', 387)->whereYear('fecha', $año)->select('fecha', 'valor AS humedad')
-                        ->orderBy('fecha', 'DESC')->get();
+                        ->whereTime('fecha', '=', '15:00:00')->orderBy('fecha', 'DESC')->get();
                     $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
                 } else {
                     return response()->json([
@@ -95,19 +95,19 @@ class medicionController extends Controller
         } else if ($limite == 3) {
             if ($request->estacion == 1) {
                 $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereYear('fecha', $año)
-                    ->whereMonth('fecha', $mes)->whereTime('fecha','=', '15:00:00')->orderBy('fecha', 'DESC')
+                    ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '15:00:00')->orderBy('fecha', 'DESC')
                     ->select('fecha', 'valor as temperatura')->get();
                 $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereYear('fecha', $año)
-                    ->whereMonth('fecha', $mes)->whereTime('fecha','=', '15:00:00')->select('fecha', 'valor as humedad')
+                    ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '15:00:00')->select('fecha', 'valor as humedad')
                     ->orderBy('fecha', 'DESC')->get();
                 $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
             } else {
                 if ($request->estacion == 2) {
                     $temperatura = medicion_meteorologico::where('estacion_parametro_id', 388)->whereYear('fecha', $año)
-                        ->whereMonth('fecha', $mes)->select('fecha', 'valor AS temperatura')
+                        ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '15:00:00')->select('fecha', 'valor AS temperatura')
                         ->orderBy('fecha', 'DESC')->get();
                     $humedad = medicion_meteorologico::first()->where('estacion_parametro_id', 387)->whereYear('fecha', $año)
-                        ->whereMonth('fecha', $mes)->select('fecha', 'valor AS humedad')
+                        ->whereMonth('fecha', $mes)->whereTime('fecha', '=', '15:00:00')->select('fecha', 'valor AS humedad')
                         ->orderBy('fecha', 'DESC')->get();
                     $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
                 } else {
@@ -132,7 +132,7 @@ class medicionController extends Controller
     public function getMp2(Request $request)
     {
 
-        
+
 
         $validator = Validator::make($request->all(), [
             'estacion' => 'required|integer|between:1,2'
