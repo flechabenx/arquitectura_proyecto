@@ -75,9 +75,9 @@ class medicionController extends Controller
         } else if ($limite == 2) {
             if ($request->estacion == 1) {
                 $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereBetween('fecha', [$from, $to])
-                ->select('fecha', 'valor AS temperatura')->orderBy('fecha', 'DESC')->get();
+                ->whereTime('fecha','=', '15:00:00')->select('fecha', 'valor AS temperatura')->orderBy('fecha', 'DESC')->get();
                 $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereBetween('fecha',[$from,$to])
-                ->select('fecha', 'valor as humedad')->orderBy('fecha', 'DESC')->get();
+                ->whereTime('fecha','=', '15:00:00')->select('fecha', 'valor as humedad')->orderBy('fecha', 'DESC')->get();
                 $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
             } else {
                 if ($request->estacion == 2) {
@@ -95,10 +95,10 @@ class medicionController extends Controller
         } else if ($limite == 3) {
             if ($request->estacion == 1) {
                 $temperatura = medicion_meteorologico::where('estacion_parametro_id', 368)->whereYear('fecha', $año)
-                    ->whereMonth('fecha', $mes)->orderBy('fecha', 'DESC')
+                    ->whereMonth('fecha', $mes)->whereTime('fecha','=', '15:00:00')->orderBy('fecha', 'DESC')
                     ->select('fecha', 'valor as temperatura')->get();
                 $humedad = medicion_meteorologico::where('estacion_parametro_id', 367)->whereYear('fecha', $año)
-                    ->whereMonth('fecha', $mes)->select('fecha', 'valor as humedad')
+                    ->whereMonth('fecha', $mes)->whereTime('fecha','=', '15:00:00')->select('fecha', 'valor as humedad')
                     ->orderBy('fecha', 'DESC')->get();
                 $resultado = array_merge($temperatura->toArray(), $humedad->toArray());
             } else {
