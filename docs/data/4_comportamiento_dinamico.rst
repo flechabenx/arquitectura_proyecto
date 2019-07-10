@@ -6,7 +6,7 @@ Escenarios
 El siguiente diagrama de casos de usos nos permite especificar como actua la arquitectura en diferentes escenarios. De igual manera, es el item central usado en al modelo de vistas 4+1.
 
 .. image:: images/caso_usos.png
-    :scale: 20%
+    :scale: 70%
     :align: center
 
 Especificación de Escenarios
