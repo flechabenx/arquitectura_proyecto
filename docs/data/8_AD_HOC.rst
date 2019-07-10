@@ -195,7 +195,7 @@ En la presente sección se presentarán los mockups que se utilizaron para crear
 **Mockups pertenecientes al usuario Móvil**
 
 .. image:: images/movil1.png
-  :scale: 20%
+  :scale: 40%
   :align: center
     
 .. image:: images/movil2.png
