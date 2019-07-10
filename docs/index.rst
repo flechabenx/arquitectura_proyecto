@@ -11,3 +11,4 @@ Documentación - Proyecto de Arquitectura
     data/5_otras_vistas.rst
     data/6_marco_conceptual.rst
     data/7_conclusiones.rst
+    data/8_AD_HOC.rst
