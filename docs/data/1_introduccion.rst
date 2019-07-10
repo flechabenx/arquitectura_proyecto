@@ -6,7 +6,7 @@ En este documento se registra todo el procedimiento realizado para crear un sist
 
 Representación de la Arquitectura
 -------------------------------
-Para representar el sistema de manera global, se utilizará el modelo de vistas 4+1 que nos permite visualizar el sistema desde diferentes perspectivas.  En cuanto al diseño de estas vistas, se usara el modelo de visualizacion C4 para la Vista Lógica, Archimate para la Vista de Proceso y finalmente UML para las Vistas Fisica y de Desarrollo .
+Para representar el sistema de manera global, se utilizará el modelo de vistas 4+1 que nos permite visualizar el sistema desde diferentes perspectivas.  En cuanto al diseño de estas vistas se usara UML. Para la vista de la arquitectura desde un punto de vista de negocio se usara Archimate y para la vista de container C4.
 
 1) C4
 ~~~~~~~~~~~~~~~~~~~~

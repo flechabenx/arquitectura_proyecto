@@ -1,7 +1,7 @@
 Metodología AD-HOC
 =================================
 
-.. image:: images/AD-HOC.png
+.. image:: images/adhoc.png
     :scale: 20%
     :align: center
     
