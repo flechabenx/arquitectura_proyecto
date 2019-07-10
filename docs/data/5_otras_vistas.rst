@@ -11,7 +11,7 @@ La vista de proceso muestra como se comunican los procesos del sistema basandose
 
 Vista Lógica
 --------------------
-La vista lógica esta encargada de descibrir la estructura y funcionalidad del sistema. Para representarla se un diagrama de _____ C4.
+La vista lógica esta encargada de descibrir la estructura y funcionalidad del sistema. Para representarla se un diagrama de _____ UML.
 
 
 
@@ -29,6 +29,6 @@ Vista Física
 --------------------
 La vista física se centra en los componentes de software utilizados en la capa fisica y sus conexiones. Para representarla se utiliza un diagrama de despligue UML.
 
-.. image:: images/Diagrama_despliegue1.jpg
+.. image:: images/Diagrama_despliegue.jpg
     :scale: 70 %
     :align: center
