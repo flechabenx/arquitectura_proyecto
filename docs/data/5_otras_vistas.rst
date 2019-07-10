@@ -29,6 +29,6 @@ Vista Física
 --------------------
 La vista física se centra en los componentes de software utilizados en la capa fisica y sus conexiones. Para representarla se utiliza un diagrama de despligue UML.
 
-.. image:: images/Diagrama_despliegue.jpg
+.. image:: images/Diagrama_despligue.jpg
     :scale: 70 %
     :align: center
