@@ -2,7 +2,7 @@ Metodología AD-HOC
 =================================
 
 .. image:: images/adhoc.png
-    :scale: 20%
+    :scale: 60%
     :align: center
     
 
@@ -199,9 +199,9 @@ En la presente sección se presentarán los mockups que se utilizaron para crear
   :align: center
     
 .. image:: images/movil2.png
-  :scale: 20%
+  :scale: 40%
   :align: center
   
-  .. image:: images/movil3.png
-  :scale: 20%
+  .. image:: images/movil23.png
+  :scale: 40%
   :align: center
