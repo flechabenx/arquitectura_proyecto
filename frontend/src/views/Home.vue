@@ -1,11 +1,10 @@
 <template>
   <div class="home container-fluid">
-    <div class="row justify-content-end p-3">
+    <div class="row justify-content-end p-3 d-sm-none">
       <router-link to="/movil">Versión movil</router-link>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <!-- <barra-lateral ></barra-lateral> -->
         <div class="row p-5 justify-content-center">
           <h1>Temuco</h1>
         </div>
@@ -36,7 +35,6 @@
 
         <div class="row justify-content-center p-5">
           <button class="btn btn-primary" @click="obtenerData()">Consultar</button>
-          <!-- <button class="btn btn-primary" @click="valorGases()">gases</button> -->
         </div>
       </div>
       <div class="col-md-9">
@@ -57,14 +55,13 @@
       </div>
     </div>
     <div >
-      <vue-disqus shortname="prueba-brneiuw3tb" identifier="wdad" url="http://localhost:8080/"></vue-disqus>
+      <vue-disqus shortname="prueba-brneiuw3tb" identifier="clima" url="http://localhost:8080/"></vue-disqus>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import Datepicker from "vuejs-datepicker";
 import grafico from "../components/Grafico.vue";
 import gases from "../components/Gases.vue";
 import restriccion from "../components/Restriccion.vue";
@@ -72,7 +69,6 @@ import ratingGauge from "../components/RatingGauge.vue";
 export default {
   name: "home",
   components: {
-    // Datepicker,
     grafico,
     gases,
     restriccion,
@@ -198,12 +194,6 @@ export default {
 };
 </script>
 <style scoped>
-.color-secundario {
-  background-color: #83b9ff;
-}
-.color-principal {
-  height: 100%;
-  background-color: #448aff;
-}
+
 </style>
 

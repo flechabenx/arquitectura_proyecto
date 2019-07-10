@@ -23,7 +23,7 @@
     </div>
     <rating-gauge  :mp2="mp2"></rating-gauge>
 
-    <vue-disqus shortname="prueba-brneiuw3tb" identifier="wdad" url="http://localhost:8080/"></vue-disqus>
+    <vue-disqus shortname="prueba-brneiuw3tb" identifier="clima" url="http://localhost:8080/"></vue-disqus>
   </div>
 </template>
 
