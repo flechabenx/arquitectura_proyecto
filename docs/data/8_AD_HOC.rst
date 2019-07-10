@@ -182,11 +182,13 @@ En la presente sección se presentarán los mockups que se utilizaron para crear
 **Mockups pertenecientes al usuario Web**
 
 .. image:: images/Screen-1(web).png
-  :scale: 20%
+  :scale: 60%
   :align: center
+
+  
     
 .. image:: images/Screen-2(web).png
-  :scale: 20%
+  :scale: 60%
   :align: center    
 
 
