@@ -2,7 +2,7 @@ Metodología AD-HOC
 =================================
 
 .. image:: images/adhoc.png
-    :scale: 20%
+    :scale: 60%
     :align: center
     
 
@@ -181,25 +181,29 @@ En la presente sección se presentarán los mockups que se utilizaron para crear
 
 **Mockups pertenecientes al usuario Web**
 
-.. image:: images/Screen-1(web).png
-  :scale: 20%
+.. image:: images/web1.png
+  :scale: 60%
   :align: center
+
+
     
-.. image:: images/Screen-2(web).png
-  :scale: 20%
+.. image:: images/web2.png
+  :scale: 60%
   :align: center    
 
 
 **Mockups pertenecientes al usuario Móvil**
 
-.. image:: images/Screen-1(movil).png
-  :scale: 20%
+.. image:: images/movil1.png
+  :scale: 60%
   :align: center
     
-.. image:: images/Screen-2(movil).png
-  :scale: 20%
+
+.. image:: images/movil2.png
+  :scale: 60%
   :align: center
   
-  .. image:: images/Screen-3(movil).png
-  :scale: 20%
+
+.. image:: images/movil3.png
+  :scale: 60%
   :align: center
