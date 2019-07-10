@@ -3,7 +3,7 @@ Comportamiento Dinámico
 
 Escenarios
 ------------
-El siguiente diagrama de casos de usos nos permite especificar como actua la arquitectura en diferentes escenarios. De igual manera, es el item central usado en al modelo de vistas 4+1.
+El siguiente diagrama de casos de usos nos permite especificar como actua la arquitectura en diferentes escenarios. De igual manera, es el item central usado en el modelo de vistas 4+1.
 
 .. image:: images/caso_usos.png
     :scale: 70%
@@ -19,7 +19,7 @@ A continuación se detalla cada caso de uso.
 +------------------+--------------------------------------------------------------------------------------------------------+
 | **Caso de Uso**  | Visualizar Datos Atmosfericos                                                                          |
 +------------------+--------------------------------------------------------------------------------------------------------+
-| **Descripción**  | Muestra temperatura y humedad en forma de graficas                                                     |
+| **Descripción**  | Muestra temperatura y humedad en forma de graficas.                                                    |
 +------------------+--------------------------------------------------------------------------------------------------------+
 | **Actores**      | Usuario Web, Usuario Móvil                                                                             |
 +------------------+--------------------------------------------------------------------------------------------------------+
@@ -52,7 +52,7 @@ A continuación se detalla cada caso de uso.
 +------------------+--------------------------------------------------------------------------------------------------------+
 | **Caso de Uso**  | Filtrar datos por estación                                                                             |
 +------------------+--------------------------------------------------------------------------------------------------------+
-| **Descripción**  | Permite la seleccion de una de las diferentes estaciones de la ciudad de Temuco                        |
+| **Descripción**  | Permite la seleccion de una de las diferentes estaciones de la ciudad de Temuco.                       |
 +------------------+--------------------------------------------------------------------------------------------------------+
 | **Actores**      | Usuario Web, Usuario Móvil                                                                             |
 +------------------+--------------------------------------------------------------------------------------------------------+
@@ -64,3 +64,31 @@ A continuación se detalla cada caso de uso.
 |                  | 4. Se despliegan los graficos correspondientes.                                                        |
 +------------------+--------------------------------------------------------------------------------------------------------+
 
+4. Mostrar opciones para moderar preguntas y respuestas
+~~~~~~~~~~~~
+
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Caso de Uso**  | Mostrar opciones para moderar preguntas y respuestas                                                   |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Descripción**  | Permite al moderador aprobar, editar, eliminar y filtrar preguntas y respuestas.                       |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Actores**      | Usuario Moderador                                                                                      |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Pasos**        | 1. El Usuario accede con su cuenta al panel de Disqus.                                                 |
+|                  | 2. El Usuario selecciona la opción de moderación que desee.                                            |
++------------------+--------------------------------------------------------------------------------------------------------+
+
+5. Eliminar preguntas y respuestas
+~~~~~~~~~~~~
+
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Caso de Uso**  | Eliminar preguntas y respuestas                                                                        |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Descripción**  | Permite al moderador eliminar preguntas y respuestas directamente desde el sitio web.                  |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Actores**      | Usuario Moderador                                                                                      |
++------------------+--------------------------------------------------------------------------------------------------------+
+| **Pasos**        | 1. El Usuario accede con su cuenta al panel de Disqus.                                                 |
+|                  | 2. El Usuario accede al sitio web.                                                                     |
+|                  | 3. El Usuario selecciona una pregunta o comentario y la elimina.                                       |
++------------------+--------------------------------------------------------------------------------------------------------+
