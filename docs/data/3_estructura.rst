@@ -8,13 +8,13 @@ Visión general
     :scale: 60%
     :align: center
 
-El sistema se divide en 2 componentes, un backend y un frontend. Ademas de trabajar en conjunto con un motor de base de datos y un plugin comercial para el manejo de las preguntas
+El sistema se divide en 2 componentes, un backend y un Frontend. Además de trabajar en conjunto con un motor de base de datos y un plugin comercial para el manejo de las preguntas
 
-el backend es una api que recibe y maneja peticiones HTTP considerandose un servicio RESTful con una arquitectura orientada a servicios. Cuenta con un manejador de rutas que asigna las peticiones a los controladore correspondientes, aparte de asignarlo por controlador la asignacion se realiza segun el verbo de la peticion (GET, PUT) a las diferentes funciones dentro de cada controlador. El backend accede a los registros de la base de datos a traves de un ORM que sigue el patron arquitectural de registro activo, el uso del ORM permite la independecia del backend en relacion al motor de la base de datos.
+El backend es una API que recibe y maneja peticiones HTTP considerándose un servicio RESTful con una arquitectura orientada a servicios. Cuenta con un manejador de rutas que asigna las peticiones a los controladores correspondientes, aparte de asignarlo por controlador la asignación se realiza según el verbo de la petición (GET, PUT) a las diferentes funciones dentro de cada controlador. El backend accede a los registros de la base de datos a través de un ORM que sigue el patrón arquitectural de registro activo, el uso del ORM permite la independencia del backend en relación al motor de la base de datos.
 
-los modelos permiten relacionar la estructura de la base de datos para que el ORM pueda pueda detectar automaticamente las tablas y sus atributos. Las consultas a la base de datos se afectuan a travez de un contructor de consultas, este constructor de consultas  utiliza el enlace de parámetros PDO (PHP Data Objects) para proteger su aplicación contra ataques de inyección de SQL.
+los modelos permiten relacionar la estructura de la base de datos para que el ORM pueda detectar automáticamente las tablas y sus atributos. Las consultas a la base de datos se efectúan a través de un constructor de consultas, este constructor de consultas utiliza el enlace de parámetros PDO (PHP Data Objects) para proteger su aplicación contra ataques de inyección de SQL.
 
-el frontend bla bla bla bla
+El Frontend es una aplicación web de página única (SPA por sus siglas en ingles) esto quiere decir que cada componente se carga una vez, ya sea los códigos HTML, JavaScript o CSS. el resto de recursos se carga dinámicamente según la pagina lo requiera 
 
 
 Descripcion de componentes
@@ -86,20 +86,6 @@ Componentes Backend
 | **Problemas**             |                                                                             |
 +---------------------------+-----------------------------------------------------------------------------+
 
-+---------------------------+-----------------------------------------------------------------------------+
-| **Componente**            | Backend_Query_Builder                                                       |
-+---------------------------+-----------------------------------------------------------------------------+
-| **Responsabilidades**     | - facilitar la sintaxis de la creacion de consultas hacia la base de datos  |
-|                           |   y ayudar en la seguridad impidiendo inyecciones SQL                       |
-+---------------------------+-----------------------------------------------------------------------------+
-| **Colaboradores**         | - **Componente:** Eloquent                                                  |
-|                           |                                                                             |
-+---------------------------+-----------------------------------------------------------------------------+
-| **Notas**                 | El componente se crea una sola vez y persiste durante todo el tiempo.       |
-|                           |                                                                             |
-+---------------------------+-----------------------------------------------------------------------------+
-| **Problemas**             |                                                                             |
-+---------------------------+-----------------------------------------------------------------------------+
 
 +---------------------------+-----------------------------------------------------------------------------+
 | **Componente**            | Backend_Modelos                                                             |
@@ -120,10 +106,9 @@ Componente Base de Datos
 --------------
 
 +---------------------------+-----------------------------------------------------------------------------+
-| **Componente**            | Backend_Modelos                                                             |
+| **Componente**            | Backend_Base_de_Datos                                                       |
 +---------------------------+-----------------------------------------------------------------------------+
-| **Responsabilidades**     | - facilitar la comprension de la estructura y forma de lo datos a obtener   |
-|                           |   u almacenar en la base de datos                                           |
+| **Responsabilidades**     | - almacenar todos los registros a los que el usuario puede acceder          |
 +---------------------------+-----------------------------------------------------------------------------+
 | **Colaboradores**         | - **Componente:** Eloquent                                                  |
 |                           |                                                                             |
@@ -161,8 +146,8 @@ Frontend
 | **Colaboradores**         | - **Componente:** Backend_Router                                            |
 |                           |                                                                             |
 +---------------------------+-----------------------------------------------------------------------------+
-| **Notas**                 | El componente se crea cada vez que se quiere realizar una peticion htpp     |
-|                           |                                                                             |
+| **Notas**                 | El componente se crea una vez y persiste mientras el frontend se encuentre  |
+|                           | instanceado                                                                 |
 +---------------------------+-----------------------------------------------------------------------------+
 | **Problemas**             |                                                                             |
 +---------------------------+-----------------------------------------------------------------------------+
@@ -201,7 +186,7 @@ Comentarios
 +---------------------------+-----------------------------------------------------------------------------+
 
 +---------------------------+-----------------------------------------------------------------------------+
-| **Componente**            | Plugin_Comentarios                                                          |
+| **Componente**            | Comentarios_Plugin_Comentarios                                              |
 +---------------------------+-----------------------------------------------------------------------------+
 | **Responsabilidades**     | - permite implementar e integrar el plugin en los componentes visuales      |
 |                           |                                                                             |
@@ -216,7 +201,7 @@ Comentarios
 +---------------------------+-----------------------------------------------------------------------------+
 
 +---------------------------+-----------------------------------------------------------------------------+
-| **Componente**            | Autentificacion                                                             |
+| **Componente**            | Comentarios_Autentificacion                                                 |
 +---------------------------+-----------------------------------------------------------------------------+
 | **Responsabilidades**     | - permite autenticarse en la pagina para poder interactuar con las preguntas|
 |                           |   y respuestas                                                              |
@@ -231,7 +216,7 @@ Comentarios
 +---------------------------+-----------------------------------------------------------------------------+
 
 +---------------------------+-----------------------------------------------------------------------------+
-| **Componente**            | Administracion_Comentarios                                                  |
+| **Componente**            | Comentarios_Administracion_Comentarios                                      |
 +---------------------------+-----------------------------------------------------------------------------+
 | **Responsabilidades**     | - permite administrar las preguntas, ya sea restrigiendo palabras o         |
 |                           |   a usuarios en especifico                                                  |
