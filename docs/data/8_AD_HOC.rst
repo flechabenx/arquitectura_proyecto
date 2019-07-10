@@ -181,27 +181,27 @@ En la presente sección se presentarán los mockups que se utilizaron para crear
 
 **Mockups pertenecientes al usuario Web**
 
-.. image:: images/Screen-1(web).png
+.. image:: images/web1.png
   :scale: 60%
   :align: center
 
-  
+
     
-.. image:: images/Screen-2(web).png
+.. image:: images/web2.png
   :scale: 60%
   :align: center    
 
 
 **Mockups pertenecientes al usuario Móvil**
 
-.. image:: images/Screen-1(movil).png
+.. image:: images/movil1.png
   :scale: 20%
   :align: center
     
-.. image:: images/Screen-2(movil).png
+.. image:: images/movil2.png
   :scale: 20%
   :align: center
   
-  .. image:: images/Screen-3(movil).png
+  .. image:: images/movil3.png
   :scale: 20%
   :align: center
