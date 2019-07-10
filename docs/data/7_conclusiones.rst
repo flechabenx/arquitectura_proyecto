@@ -5,7 +5,7 @@ Durante la realización del proyecto hemos podido poner en práctica los conocim
 La arquitectura de software nos permitió ser metódicos, ordenados y tener una guía desde el comienzo para el desarrollo de la aplicación. Permitiendo calcular los tiempos y recursos necesarios para poder completar el proyecto.
 
 Ventajas del Sistema?
--------------------------------
+~~~~~~~~~~~~~~~~~~~~
 La aplicación se desarrollo sobre una arquitectura RESTful en PHP utilizando el Framework Laravel para el Backend y el Framework Angular para el Frontend. A continuación, se listan algunas de sus ventajas y desventajas.
 
 Insertar ventajas y desventajas REST.
