@@ -32,3 +32,20 @@ La vista física se centra en los componentes de software utilizados en la capa 
 .. image:: images/Diagrama_despligue.jpg
     :scale: 70 %
     :align: center
+
+Representación de Arquitectura del Sistema en C4
+------------------
+
+.. image:: images/C4_container.jpg
+    :scale: 70 %
+    :align: center
+    
+Representación de Arquitectura del Sistema en Archimate
+------------------
+
+.. image:: images/Archimate.png
+    :scale: 70 %
+    :align: center
+.. image:: images/C4_container.jpg
+    :scale: 70 %
+    :align: center
