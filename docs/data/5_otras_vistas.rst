@@ -11,9 +11,12 @@ La vista de proceso muestra como se comunican los procesos del sistema basandose
 
 Vista Lógica
 --------------------
-La vista lógica esta encargada de descibrir la estructura y funcionalidad del sistema. Para representarla se un diagrama de _____ UML.
+La vista lógica esta encargada de descibrir la estructura y funcionalidad del sistema. Para representarla se un diagrama de comunicación UML.
 
-
+.. image:: images/comunication.png
+    :scale: 70 %
+    :align: center
+    
 
 Vista de Desarrollo
 --------------------
