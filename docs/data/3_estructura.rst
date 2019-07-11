@@ -8,19 +8,19 @@ Visión general
     :scale: 60%
     :align: center
 
-El sistema se divide en 2 componentes, un backend y un Frontend. Además de trabajar en conjunto con un motor de base de datos y un plugin comercial para el manejo de las preguntas
+El sistema se divide en 2 componentes, un backend y un Frontend. Además de trabajar en conjunto con un motor de base de datos y un plugin comercial para el manejo de las preguntas.
 
 El backend es una API que recibe y maneja peticiones HTTP considerándose un servicio RESTful con una arquitectura orientada a servicios. Cuenta con un manejador de rutas que asigna las peticiones a los controladores correspondientes, aparte de asignarlo por controlador la asignación se realiza según el verbo de la petición (GET, PUT) a las diferentes funciones dentro de cada controlador. El backend accede a los registros de la base de datos a través de un ORM que sigue el patrón arquitectural de registro activo, el uso del ORM permite la independencia del backend en relación al motor de la base de datos.
 
-los modelos permiten relacionar la estructura de la base de datos para que el ORM pueda detectar automáticamente las tablas y sus atributos. Las consultas a la base de datos se efectúan a través de un constructor de consultas, este constructor de consultas utiliza el enlace de parámetros PDO (PHP Data Objects) para proteger su aplicación contra ataques de inyección de SQL.
+Los modelos permiten relacionar la estructura de la base de datos para que el ORM pueda detectar automáticamente las tablas y sus atributos. Las consultas a la base de datos se efectúan a través de un constructor de consultas, este constructor de consultas utiliza el enlace de parámetros PDO (PHP Data Objects) para proteger su aplicación contra ataques de inyección de SQL.
 
-El Frontend es una aplicación web de página única (SPA por sus siglas en ingles) esto quiere decir que cada componente se carga una vez, ya sea los códigos HTML, JavaScript o CSS. el resto de recursos se carga dinámicamente según la pagina lo requiera 
+El Frontend es una aplicación web de página única (SPA por sus siglas en ingles) esto quiere decir que cada componente se carga una vez, ya sea los códigos HTML, JavaScript o CSS. el resto de recursos se carga dinámicamente según la pagina lo requiera. 
 
 
 Descripcion de componentes
 --------------
 
-a continuacion se describen los componentes de la arquitectura
+A continuacion se describen los componentes de la arquitectura.
 
 Componentes Backend
 --------------
