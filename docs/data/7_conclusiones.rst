@@ -18,12 +18,12 @@ Ventajas de REST.
 Desventajas de REST.
 ~~~~~~~~~~~~~~~~~~~~
 
-1. como no mantiene estados hay que montar una infraestructura propia para poder conservar el conjunto de la aplicación, por ejemplo con el envió de tokens para autentificarse frente al servidor.
+1. Como no mantiene estados hay que montar una infraestructura propia para poder conservar el conjunto de la aplicación, por ejemplo con el envió de tokens para autentificarse frente al servidor.
 
 Ventajas de usar Laravel.
 ~~~~~~~~~~~~~~~~~~~~
 
-1. Cuenta con un administrador de dependencias, lo que permite administrar los paquetes externos que se decidan implementar en el proyecto
+1. Cuenta con un administrador de dependencias, lo que permite administrar los paquetes externos que se decidan implementar en el proyecto.
 2. Incluye Artisan, interfaz de comandos para ejecutar diferentes tareas desde la consola.
 3. Facilidad de mantenimiento versus otros Framework.
 4. Fácil validación de formularios a través de la librería Validator.
@@ -32,7 +32,7 @@ Desventajas de usar Laravel.
 ~~~~~~~~~~~~~~~~~~~~
 
 1. Ejecución lenta, el uso de un frameworks PHP agrega complejidad y sobrecarga en forma de clases y bibliotecas cargas antes de que su código sea llamado.
-2. Visibilidad y control limitados, al usar un framework el nivel de abstracción aumenta ya que aunque muchas partes o plantillas del framework son pensadas a ser personalizadas, no se tiene mucho control sobre el núcleo del framework y las bibliotecas principales
+2. Visibilidad y control limitados, al usar un framework el nivel de abstracción aumenta ya que aunque muchas partes o plantillas del framework son pensadas a ser personalizadas, no se tiene mucho control sobre el núcleo del framework y las bibliotecas principales.
 
 
 Ventajas de usar VueJS
