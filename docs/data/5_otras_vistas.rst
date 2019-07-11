@@ -46,6 +46,3 @@ Representación de Arquitectura del Sistema en Archimate
 .. image:: images/Archimate.png
     :scale: 70 %
     :align: center
-.. image:: images/C4_container.jpg
-    :scale: 70 %
-    :align: center
