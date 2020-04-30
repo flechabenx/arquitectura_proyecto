@@ -13,7 +13,7 @@
     "bootstrap-loader": "^3.0.4",
     "core-js": "^2.6.5",
     "fusioncharts": "^3.13.5-sr.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.15.0",
     "vue": "^2.6.10",
     "vue-disqus": "^3.0.5",
